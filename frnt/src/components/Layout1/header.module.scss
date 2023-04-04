@@ -1,0 +1,65 @@
+@use '../../styles/vars.scss';
+
+@keyframes hoverline {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 120%;
+    }
+}
+
+.header {
+    padding: 15px vars.$sideSpace;
+    color: vars.$dark-purple;
+    position: relative;
+    border-bottom: 1px vars.$fainted-darkgry solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        line-height: 1.8rem;
+    }
+
+    .menus {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+
+        .menu {
+            text-transform: capitalize;
+            position: relative;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.1rem;
+            cursor: pointer;
+
+            &::after {
+                position: absolute;
+                display: block;
+                left: 50%;
+                top: calc(100% + 1px);
+                transform: translateX(-50%);
+                width: 0%;
+                height: 1.5px;
+                content: " ";
+                background-color: vars.$french-violet;
+            }
+
+            &:hover {
+                color: vars.$french-violet;
+
+                &::after {
+                    animation: hoverline 300ms ease-in-out 25ms forwards;
+                }
+            }
+        } 
+    }
+}

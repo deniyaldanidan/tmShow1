@@ -1,0 +1,49 @@
+@use '../../styles/vars.scss';
+
+.drpDwnMenu {
+    position: relative;
+
+    .drpName {
+        text-transform: capitalize;
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.1rem;
+        cursor: pointer;
+        
+    }
+
+    .drpDwn {
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 50%;
+        background-color: vars.$charcoal;
+        z-index: 10;
+        color: vars.$powder-white;
+        width: fit-content;
+        border-radius: 5px;
+
+        *{
+            display: block;
+            padding: 12px 15px;
+            font-size: 1rem;
+            line-height: 1rem;
+            cursor: pointer;
+            transition: 100ms ease-in-out;
+
+            &:first-of-type{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            &:last-of-type{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+
+            &:hover{
+                background-color: vars.$lapis;
+            }
+        }
+    }
+}

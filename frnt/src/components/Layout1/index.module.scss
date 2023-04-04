@@ -1,0 +1,31 @@
+@use '../../styles/vars.scss';
+
+.layout {
+    background-color: vars.$powder-white;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    .socials {
+        display: flex;
+        align-items: flex-end;
+        justify-content: right;
+        column-gap: 20px;
+        padding: 12px vars.$sideSpace;
+        background-color: vars.$fainted-darkgry;
+        
+        * {
+            font-size: 1.25rem;
+            font-weight: 500;
+            display: flex;
+            transition: color 100ms ease-in-out;
+            color: vars.$powder-white;
+            cursor: pointer;
+
+            &:hover{
+                color: vars.$powder-white;
+            }
+        }
+    }
+}

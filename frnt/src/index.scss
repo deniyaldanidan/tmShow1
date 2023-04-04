@@ -1,0 +1,13 @@
+@use './styles/vars.scss';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Eczar', serif;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
