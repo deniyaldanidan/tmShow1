@@ -1,0 +1,115 @@
+@use '../../styles/vars.scss';
+
+.footerWrapper {
+    padding: 50px vars.$sideSpace*1.5;
+    padding-bottom: 25px;
+
+    .cta {
+        .title {
+            font-size: 1.6rem;
+            line-height: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+
+            &::after {
+                display: block;
+                position: absolute;
+                top: calc(100% + 5px);
+                left: 50%;
+                transform: translateX(-50%);
+                content: " ";
+                width: 40px;
+                height: 2px;
+                background-color: vars.$fainted-darkgry;
+
+            }
+        }
+
+        .ctaInpGrp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+
+            input {
+                border-radius: 10px;
+                width: 40ch;
+                outline: none;
+                border: solid 1px vars.$charcoal;
+                background-color: #ffffff;
+                padding: 3px 10px;
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+                line-height: 1rem;
+                font-weight: 500;
+                background-color: vars.$dark-spring-green;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+                padding: 13px 50px;
+                cursor: pointer;
+                transition: 150ms ease-in-out;
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+
+    .primary {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.6rem;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            column-gap: 30px;
+            font-size: 1.25rem;
+            color: vars.$charcoal;
+            cursor: pointer;
+        }
+    }
+
+    .secondary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        color: vars.$charcoal;
+        font-size: 0.9rem;
+        line-height: 1rem;
+        position: relative;
+
+        &::before {
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: " ";
+            width: 110%;
+            height: 1px;
+            background-color: vars.$fainted-darkgry;
+        }
+
+        .footerMenu {
+            display: flex;
+            align-items: center;
+            column-gap: 30px;
+        }
+    }
+}

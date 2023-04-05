@@ -32,11 +32,14 @@ const Home = () => {
     }, [])
 
     return (
-        <div className={styles.blogCards}>
-            {
-                blogs.map((blog)=><BlogCard blog={blog} key={blog._id} />)
-            }
-        </div>
+        <>
+            <div className={styles.pageTitle}>All Blogs</div>
+            <div className={styles.blogCards}>
+                {
+                    blogs.map((blog) => <BlogCard blog={blog} key={blog._id} />)
+                }
+            </div>
+        </>
     );
 }
 

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Header from "./Header";
 import styles from './index.module.scss';
+import Footer from "./Footer";
 
 const Layout1 = () => {
 
@@ -10,7 +11,7 @@ const Layout1 = () => {
             <main style={{ flexGrow: 1 }}>
                 <Outlet />
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }

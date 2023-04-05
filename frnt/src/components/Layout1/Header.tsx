@@ -23,10 +23,6 @@ const options = [
     {
         name: "Sports",
         path: "/categories/sports"
-    },
-    {
-        name: "View All",
-        path: "/categories"
     }
 ]
 
