@@ -1,0 +1,65 @@
+@use './vars.scss';
+
+.masterContainer{
+    max-width: 750px;
+    margin: 20px auto;
+    color: vars.$charcoal;
+
+    .pageTitle{
+        font-size: 1.75rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.6rem;
+    }
+
+    .error{
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+        font-weight: 500;
+        color: vars.$danger;
+        text-align: center;
+        height: 1.2rem;
+        margin-top: 15px;
+    }
+
+    .authForm{
+        max-width: 400px;
+        margin: 30px auto 70px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 30px;
+
+        button{
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            padding: 9px 50px;
+            background-color: vars.$dark-purple;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: vars.$celestial-blue;
+                color: #fff;
+            }
+        }
+    }
+
+    .info{
+        text-align: center;
+        font-size: 1.25rem;
+        a{
+            color: vars.$dark-purple;
+            font-weight: 500;
+            transition: color 150ms ease-in-out;
+
+            &:hover{
+                color: vars.$french-violet;
+            }
+        }
+    }
+}

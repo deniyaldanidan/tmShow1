@@ -1,38 +1,22 @@
 import styles from './home.module.scss';
-// import clsx from 'clsx';
-import { useEffect, useState } from "react";
-import { basicApi } from "../../api/api";
-import { Blog } from "../../types/BlogData";
+import { useState } from "react";
+import { Blog } from "../../types/myTypes";
 import BlogCard from "../../components/BlogCard";
+import { Helmet } from 'react-helmet-async';
+import useBasicFetch from '../../hooks/useBasicFetch';
 
 const Home = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
-    useEffect(() => {
-        let isMounted = true;
-        const controller = new AbortController();
-
-        const getBlogs = async () => {
-            try {
-                const response = await basicApi.get("/", {
-                    signal: controller.signal
-                });
-                isMounted && setBlogs(response.data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        getBlogs();
-        return () => {
-            isMounted = false;
-            controller.abort()
-        }
-
-    }, [])
+    useBasicFetch({url:"/", setData:setBlogs})
 
     return (
         <>
+            <Helmet>
+                <title>Home</title>
+                <meta name='description' content='Home page of the Bloggatta app' />
+                <meta name='keywords' content='Bloggatta, Blogging, Articles' />
+            </Helmet>
             <div className={styles.pageTitle}>All Blogs</div>
             <div className={styles.blogCards}>
                 {

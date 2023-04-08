@@ -1,7 +1,8 @@
 @use '../../styles/vars.scss';
 
 .footerWrapper {
-    padding: 50px vars.$sideSpace*1.5;
+    padding: 0 vars.$sideSpace*1.5;
+    padding-top: 150px;
     padding-bottom: 25px;
 
     .cta {
@@ -110,6 +111,14 @@
             display: flex;
             align-items: center;
             column-gap: 30px;
+
+            *{
+                transition: 150ms ease-in-out;
+
+                &:hover{
+                    color: vars.$dark-purple;
+                }
+            }
         }
     }
 }

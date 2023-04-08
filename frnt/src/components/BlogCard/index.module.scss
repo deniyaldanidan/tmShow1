@@ -10,7 +10,7 @@
 
     color: vars.$charcoal;
     // color: vars.$dark-purple;
-    cursor: pointer;
+    // cursor: pointer;
     transition: all 250ms ease-in-out;
     display: flex;
     justify-content: left;
@@ -57,17 +57,31 @@
             width: 100%;
             justify-content: space-between;
             align-items: center;
-            font-size: 1rem;
             margin-top: 20px;
+            
+            div{
+                display: flex;
+                column-gap: 5px;
+                align-items: baseline;
+                
+                .metaIcon{
+                    display: flex;
+                    font-size: 1rem;
+                }
+                span{
+                    font-size: 1.1rem;
+                    line-height: 1.1rem;
+                }
+            }
         }
 
         a{
             display: block;
+            width: fit-content;
             font-size: 1.1rem;
             font-weight: 500;
             line-height: 1rem;
             margin-top: 25px;
-            text-align: right;
             transition: 250ms ease-in-out color;
 
             &:hover{

@@ -21,4 +21,4 @@ const refreshController = async (req:Request, res:Response) => {
     }
 };
 
-module.exports = refreshController;
+export default refreshController;

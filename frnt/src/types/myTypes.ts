@@ -11,3 +11,12 @@ export type Blog = {
     createdAt: string,
     updatedAt: string
 }
+
+export type authUserObj = {
+    userId: string,
+    username: string,
+    roles: {
+        User: number,
+        Admin?: number
+    }
+}

@@ -1,0 +1,53 @@
+@use '../../styles/vars.scss';
+
+.inpGrp{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    row-gap: 8px;
+
+    label{
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.35rem;
+    }
+
+    input{
+        display: block;
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        width: 100%;
+        padding: 8px 12px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid vars.$charcoal;
+        outline: none;
+    }
+
+    .inpError{
+        color: vars.$danger;
+        margin: -2px 0 0 12px;
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .pwdInp{
+        width: 100%;
+        position: relative;
+
+        div{
+            display: block;
+            width: fit-content;
+            height: 1.3rem;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            svg{
+                font-size: 1.3rem;
+                line-height: 1.4rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Blog } from "../../types/BlogData";
+import { Blog } from "../../types/myTypes";
 import styles from './index.module.scss';
-import { format } from 'date-fns';
+import { formatDistance } from 'date-fns';
+import {FaUserEdit, FaCalendarAlt, FaTags} from 'react-icons/fa';
 
 type props = {
     blog: Blog
@@ -18,11 +19,11 @@ const BlogCard = ({ blog }: props) => {
                 <div className={styles.excerpt}>{blog.excerpt}</div>
 
                 <div className={styles.metaCol}>
-                    <div>by {blog.author.username}</div>
-                    <div>last updated {format(new Date(blog.updatedAt), "yyyy-MM-dd")}</div>
-                    <div>Category: {blog.category}</div>
+                    <div><FaUserEdit className={styles.metaIcon}/> <span>{blog.author.username}</span></div>
+                    <div><FaCalendarAlt className={styles.metaIcon}/> <span>{formatDistance(new Date(blog.updatedAt), new Date(), {addSuffix:true})}</span></div>
+                    <div><FaTags className={styles.metaIcon}/> <span>{blog.category}</span></div>
                 </div>
-                <Link to={`/blog/view/${blog._id}`}>View more..</Link>
+                <Link to={`/blog/view/${blog._id}`}>Read More...</Link>
             </div>
         </div>
     )
