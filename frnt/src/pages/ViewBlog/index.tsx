@@ -12,7 +12,9 @@ const ViewBlog = (): JSX.Element => {
     const [data, setData] = useState<Blog | null>(null)
     const { id } = useParams();
 
-    useBasicFetch({url: `/${id}`, setData})
+    useBasicFetch(`/${id}`, (data)=>{
+        setData(data)
+    })
 
     return (
         data ? (

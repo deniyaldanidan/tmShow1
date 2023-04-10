@@ -1,13 +1,8 @@
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { useEffect } from "react";
 import { basicApi } from "../api/api";
 import { CanceledError } from "axios";
 
-type props<T> = {
-    url:string,
-    setData: Dispatch<SetStateAction<T>>
-}
-
-export default function useBasicFetch<T> ({url, setData}:props<T>){
+export default function useBasicFetch(url:string, cb:(data:any)=>void){
 
     useEffect(() => {
         let isMounted = true;
@@ -17,7 +12,7 @@ export default function useBasicFetch<T> ({url, setData}:props<T>){
                 const response = await basicApi.get(url, {
                     signal: controller.signal
                 });
-                isMounted && setData(response.data);
+                isMounted && cb(response.data);
             } catch (error) {
                 if (error instanceof CanceledError) {
                     return;
@@ -30,5 +25,6 @@ export default function useBasicFetch<T> ({url, setData}:props<T>){
             isMounted = false;
             controller.abort()
         }
-    }, [url, setData])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [url])
 }

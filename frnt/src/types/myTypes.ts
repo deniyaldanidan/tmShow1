@@ -18,5 +18,6 @@ export type authUserObj = {
     roles: {
         User: number,
         Admin?: number
-    }
+    },
+    accessToken: string
 }

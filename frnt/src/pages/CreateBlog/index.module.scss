@@ -1,0 +1,86 @@
+@use '../../styles/vars.scss';
+
+.pageWrapper {
+    display: block;
+    max-width: 900px;
+    margin: 40px auto;
+    color: vars.$charcoal;
+
+    .pageTitle {
+        font-size: 1.75rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .error {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        font-weight: 500;
+        color: vars.$danger;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 40px;
+        margin-top: 50px;
+        margin-bottom: 70px;
+
+        .custGrp {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            row-gap: 8px;
+
+            label {
+                font-size: 1.25rem;
+                font-weight: 500;
+                line-height: 1.35rem;
+            }
+
+            textarea {
+                display: block;
+                font-size: 1.2rem;
+                line-height: 1.3rem;
+                width: 100%;
+                padding: 8px 12px;
+                background-color: #fff;
+                border-radius: 10px;
+                border: 1px solid vars.$charcoal;
+                outline: none;
+                resize: none;
+                height: 40ch;
+            }
+        }
+
+        .select {
+            display: block;
+            width: 90%;
+            background-color: #fff;
+            border: 1px solid vars.$charcoal;
+            outline: none;
+        }
+
+        .btn {
+            font-size: 1.3rem;
+            line-height: 1.3rem;
+            padding: 12px 70px;
+            background-color: vars.$dark-purple;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: vars.$celestial-blue;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -8,7 +8,9 @@ import useBasicFetch from '../../hooks/useBasicFetch';
 const Home = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
-    useBasicFetch({url:"/", setData:setBlogs})
+    useBasicFetch("/", data=>{
+        setBlogs(data)
+    })
 
     return (
         <>

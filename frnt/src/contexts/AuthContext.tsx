@@ -3,6 +3,7 @@ import jwtDecode from 'jwt-decode';
 import validator from 'validator';
 import { authUserObj } from '../types/myTypes';
 import roles from '../libs/roles';
+import useBasicFetch from '../hooks/useBasicFetch';
 
 type authContext = {
     auth: authUserObj | null,
@@ -17,6 +18,10 @@ const AuthContext = createContext<authContext | null>(null);
 export const AuthProvider = (props: { children: JSX.Element }) => {
     const [auth, setAuth] = useState<authUserObj | null>(null);
 
+    // Persistent User Login
+    useBasicFetch("/auth/refresh", (data)=>{
+        updUserAuth(data?.accessToken)
+    })
 
     const updUserAuth = (accToken: string) => {
         if (validator.isJWT(accToken)) {
@@ -26,7 +31,8 @@ export const AuthProvider = (props: { children: JSX.Element }) => {
                     return {
                         userId: decoded.userId,
                         username: decoded.username,
-                        roles: decoded.roles
+                        roles: decoded.roles,
+                        accessToken: accToken
                     }
                 }
                 return null

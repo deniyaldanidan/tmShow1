@@ -27,11 +27,11 @@ const options = [
         name: "Sports",
         path: "/categories/sports"
     }
-]
+];
 
 const Header = (): JSX.Element => {
-    const { isAuthed, auth } = useAuth();
-    const logout  = useLogout();
+    const { isAuthed, auth, isAdmin } = useAuth();
+    const logout = useLogout();
 
     return (
         <div className={clsx(styles.header)}>
@@ -41,6 +41,14 @@ const Header = (): JSX.Element => {
                 <DrpMenu menuClass={styles.menu} options={options} menuName="Topics" />
                 <Link to="/howTo" className={styles.menu}>How To's</Link>
                 <Link to="/about" className={styles.menu}>About</Link>
+                {
+                    isAdmin() ? (
+                        <>
+                            <Link to="/admin/blogs/create" className={styles.menu}>Create Blog</Link>
+                            <Link to="/admin/blogs/manage" className={styles.menu}>Manage Blogs</Link>
+                        </>
+                    ) : ""
+                }
             </div>
             <div className={styles.menus} >
                 {
